@@ -6,7 +6,7 @@ Para asegurar la comparabilidad en el tiempo, se asume que las personas hacen un
 
 Los procedimientos desarrollados aquí permiten analizar cómo la inversión inicial evoluciona en el tiempo.
 
-Algunas referencias relacionadas que sirven de inspiración:
+Algunas referencias relacionadas:
 
 - Cristi, Michael (2017). *Felices y forrados : efectividad de los cambio de fondo*. Tesis de Magíster. [URL](http://repositorio.uchile.cl/handle/2250/149952)
 - Cuevas, Bernhardt y Sanclemente (2018). *The Pied Piper of Pensioners* [URL](https://www.chapman.edu/research/institutes-and-centers/economic-science-institute/_files/ifree-papers-and-photos/bernhardt-piper_last-2018.pdf)
