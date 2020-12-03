@@ -17,61 +17,43 @@ class Posicion():
     
 class Estrategia():
     'Una Estrategia es una colección (lista) de posiciones'
-    def __init__(self, fecha_ini, fecha_end, tipo_estrategia):
+    estrategias_base = ['A', 'B', 'C', 'D', 'E']
+
+    def __init__(self, fecha_ini, fecha_end, nombre_estrategia, path=None):
         self.fecha_ini = fecha_ini
         self.fecha_end = fecha_end
-        self.tipo_estrategia = tipo_estrategia
-        self.posiciones = []
-    
-    def add_posicion(self, posicion):
-        self.posiciones.append(posicion)
-    
-    def __repr__(self):
-        tt = 'Estrategia: {}\nFecha Inicio: {}\nFecha Término: {}\n\n'.format(self.tipo_estrategia, self.fecha_ini, self.fecha_end)
-        for pos in self.posiciones[0:3]:
-            tt += str(pos) + '\n'
-        
-        if len(self.posiciones) > 4:
-            tt += '...\n' 
-        tt += str(self.posiciones[-1]) + '\n'
-        
-        return tt
+        self.nombre_estrategia = nombre_estrategia
+        self.posiciones = self.__crea_posiciones(path)
 
-class BaseEstrategias():
-    def __init__(self):
-        self.estrategias_posibles = ['FF', 'A', 'B', 'C', 'D', 'E']
-        self.data_ff = self.__helper_base_ff()
+    def __crea_posiciones(self, path):
 
-    def crea_estrategia(self, fecha_ini, fecha_end, tipo_estrategia):
-        assert tipo_estrategia in self.estrategias_posibles, 'No existe esa estrategia'
+        posiciones = []
 
-        estrategia = Estrategia(fecha_ini, fecha_end, tipo_estrategia)
-        porcentajes = [0] * 5
+        if path:
+            data = self.__get_data(path)
 
-        if tipo_estrategia == 'FF':
-            sel = ((self.data_ff['Fecha término'].dt.date >= fecha_ini) & \
-                  (self.data_ff['Fecha inicio'].dt.date <= fecha_end))
+            sel = ((data['Fecha término'].dt.date >= self.fecha_ini) & \
+                  (data['Fecha inicio'].dt.date <= self.fecha_end))
 
-            df_sel = self.data_ff[sel]
-
+            df_sel = data[sel]
             for i, row in df_sel.iterrows():
-                fini = max(row['Fecha inicio'].date(), fecha_ini)
-                fend = min(row['Fecha término'].date(), fecha_end)
-                porcentajes = self.__helper_porcentajes(row['Sugerencia FyF'])
-                posicion = Posicion(porcentajes, fini, fend)
-                estrategia.add_posicion(posicion)
+                fini = max(row['Fecha inicio'].date(), self.fecha_ini)
+                fend = min(row['Fecha término'].date(), self.fecha_end)
+                porcentajes = self.__helper_porcentajes(row['Sugerencia'])
+                posiciones.append(Posicion(porcentajes, fini, fend))
 
         else:
-            porcentajes[MAPFONDOS[tipo_estrategia]] = 1
-            posicion = Posicion(porcentajes, fecha_ini, fecha_end)
-            estrategia.add_posicion(posicion)
+            assert self.nombre_estrategia in self.estrategias_base, 'No existe esa estrategia'
+
+            porcentajes = [0] * 5
+            porcentajes[MAPFONDOS[self.nombre_estrategia]] = 1
+            posiciones.append(Posicion(porcentajes, self.fecha_ini, self.fecha_end))
             
-        return estrategia
-
-    def __helper_base_ff(self):
-        df = pd.read_excel(ROOT+r'\anuncios_ff.xlsx')
+        return posiciones
+    
+    def __get_data(self, path):
+        df = pd.read_excel(ROOT + '/' + path)
         df.sort_values('Fecha inicio', ascending=True, inplace=True)
-
         return df
 
     def __helper_porcentajes(self, sugerencia):
@@ -90,4 +72,20 @@ class BaseEstrategias():
             allocation[MAPFONDOS[fondo]] = perc / 100
         
         return allocation
+
+    
+    def __repr__(self):
+        tt = 'Estrategia: {}\nFecha Inicio: {}\nFecha Término: {}\n\n'.format(
+                self.nombre_estrategia, self.fecha_ini, self.fecha_end)
+        for pos in self.posiciones[0:3]:
+            tt += str(pos) + '\n'
+        
+        if len(self.posiciones) > 4:
+            tt += '...\n' 
+        tt += str(self.posiciones[-1]) + '\n'
+        
+        return tt
+
+
+
 

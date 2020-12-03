@@ -39,9 +39,9 @@ Parámetros claves:
 - Fecha de inicio de la inversión
 - Fecha de término de la inversión
 - Nombre de la estrategia a seguir (alguno de los multifondos, o "FF")
+- Path del archivo (opcional, si es que se tiene un archivo con fechas sugeridas de cambio)
 
-
-Interfaz principal es el objeto "BaseEstrategias", que permite procesar las estrategias disponibles y adaptarlas a lo requerido por el usuario.
+Interfaz principal es el objeto "Estrategia", que permite procesar las estrategias disponibles y adaptarlas a lo requerido por el usuario.
 
 
 VER DEMOSTRACIÓN AQUÍ: [2_avisos_cambio_fondos/test_estrategias.ipynb](/2_avisos_cambio_fondos/test_estrategias.ipynb)

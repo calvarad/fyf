@@ -68,7 +68,7 @@ def df_valores_cuota(estrategia, afp, monto_inicial, lag_solicitud, lag_venta=2,
         aux_data.append(data)
         
     df = pd.DataFrame.from_records(aux_data, columns = [
-        'Fecha', 'Valor Fondo', 
+        'Fecha', 'Val_{}_lag_{}'.format(estrategia.nombre_estrategia, lag_solicitud), 
         'CP_A', 'CP_B', 'CP_C', 'CP_D', 'CP_E'])
     
     df['Fecha'] = pd.to_datetime(df['Fecha'], format='%Y-%m-%d')
