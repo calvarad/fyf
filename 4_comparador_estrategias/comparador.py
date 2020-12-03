@@ -26,4 +26,10 @@ def agrega_estrategias(lista_estrategias, afp, monto_inicial, lag_solicitud):
         else:
             df_out = df_out.merge(df, on=['Fecha'], how='outer')
 
+    #arreglo los valores por si hay missings
+    df_out.sort_values('Fecha', inplace=True)
+    df_out.set_index('Fecha', inplace=True)
+    df_out.fillna(method='ffill', inplace=True)
+    df_out.reset_index(inplace=True)
+
     return df_out

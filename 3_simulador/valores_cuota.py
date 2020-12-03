@@ -56,7 +56,10 @@ def df_valores_cuota(estrategia, afp, monto_inicial, lag_solicitud, lag_venta=2,
             # esto asume que no puedo moverme de fondo mientras no se termine de
             # materializar el cambio solicitado
             while fecha < buy_date:
-                fecha = next(dateitera)
+                try:
+                    fecha = next(dateitera)
+                except:
+                    break
 
         #no hay cambio de fondo
         else:
