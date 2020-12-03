@@ -1,5 +1,10 @@
 # Rentabilidad Felices y Forrados
 
+El propósito de este repositorio es compartir código base para comparar la rentabilidad de fondos de pensiones (a.k.a. los "multifondos") versus estrategias activas de cambio de fondos.
+
+TO-DO al 2 dic:
+- Agregar conexión directa a base de datos de SPensiones
+- Incorporar posibilidad de analizar fechas de cambios arbitrarias (que usuario pueda crear y evaluar sus propias estrategias)
 
 
 ### Parte 1. Valores Cuota SPensiones
