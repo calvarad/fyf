@@ -6,6 +6,13 @@ Para asegurar la comparabilidad en el tiempo, se asume que las personas hacen un
 
 Los procedimientos desarrollados aquí permiten analizar cómo la inversión inicial evoluciona en el tiempo.
 
+Algunas referencias relacionadas que sirven de inspiración:
+
+- Cristi, Michael (2017). *Felices y forrados : efectividad de los cambio de fondo*. Tesis de Magíster. [URL](http://repositorio.uchile.cl/handle/2250/149952)
+- Cuevas, Bernhardt y Sanclemente (2018). *The Pied Piper of Pensioners* [URL](https://www.chapman.edu/research/institutes-and-centers/economic-science-institute/_files/ifree-papers-and-photos/bernhardt-piper_last-2018.pdf)
+- Blog "La Firme de la Rentabilida de Felices y Forrados" [URL](https://economistaflaite.com/2020/11/30/la-firme-de-la-rentabilida-de-felices-y-forrados/)
+
+
 TO-DO al 3 dic:
 - Compartir formulario mínimo (Excel) que debería construir un usuario que quiera analizar otras estrategias de inversión.
 
@@ -23,8 +30,7 @@ En esta parte del proyecto, se procesa la información de valores cuota de la Su
 **INSTRUCCIONES**
 
 1. Correr archivo [1_valores_cuota/parse_valores_cuota.py](/1_valores_cuota/parse_valores_cuota.py)
-
-Valores cuota procesados quedan guardados en base SQLite.
+2. Valores cuota procesados quedan guardados en base SQLite.
 
 
 *Archivos CSV descargados de https://www.spensiones.cl/apps/valoresCuotaFondo/vcfAFP.php*
@@ -33,12 +39,12 @@ Valores cuota procesados quedan guardados en base SQLite.
 
 ### Parte 2. Estrategias de Inversión
 
-En esta parte del proyecto, se procesarán las estrategias de inversión disponibles (hasta ahora, fondos pasivos, y las recomendaciones de Felices y Forrados), creado una interfaz para obtener información relevante según las preferencias del usuario.
+En esta parte del proyecto, se procesan las estrategias de inversión disponibles (estrategias pasivas o activas), a través de una interfaz para orderar las sugerencias de cambio de fondos, según las preferencias del usuario.
 
 Parámetros claves:
 - Fecha de inicio de la inversión
 - Fecha de término de la inversión
-- Nombre de la estrategia a seguir (alguno de los multifondos, o "FF")
+- Nombre de la estrategia a seguir (alguno de los multifondos, o "FF", o "MAX")
 - Path del archivo (opcional, si es que se tiene un archivo con fechas sugeridas de cambio)
 
 Interfaz principal es el objeto "Estrategia", que permite procesar las estrategias disponibles y adaptarlas a lo requerido por el usuario.
