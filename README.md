@@ -95,7 +95,7 @@ Crear función que tome una lista de estrategias y entregue un DataFrame con los
 
 PENDIENTE
 
-Crear visualización para las estrategias analizadas.
+Crear visualización para las estrategias analizadas. Usar función desarrollada en la Parte 4.
 
 
 ### Anexos. Bases de datos auxiliares
