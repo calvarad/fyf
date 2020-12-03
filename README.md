@@ -60,7 +60,7 @@ Snapshot al 2 de diciembre de 2020:
 
 ### Parte 3. Simulador de Valores Cuota
 
-Usando la base de estrategias de la Parte 2, en esta parte se puede obtener una serie histórica del valor cuota y del monto invertido inicialmente.
+Usando la base de estrategias de la Parte 2, en esta parte se puede obtener una serie histórica del monto invertido inicialmente, de acuerdo a la evolución de los valores cuotas de los fondos seleccionados en una determinada estrategia.
 
 VER DEMOSTRACIÓN AQUÍ: [3_simulador/test_valores_cuota.ipynb](/3_simulador/test_valores_cuota.ipynb)
 
@@ -73,9 +73,19 @@ Parámetros claves:
 - lag_venta: Este parámetro permite definir en cuántos días hábiles se verifica la "venta" de las cuotas originales (por normativa, ocurre en t+2 días hábiles)
 - lag_compra: Este parámetro permite definir en cuántos días hábiles se verifica la "compra" de las cuotas nuevas (por normativa, ocurre en t+2 días hábiles)
 
-### Parte 4. Análisis Comparativo Multi Fondos vs Estrategias Activas
+### Parte 4. Agregación de Múltiples Estrategias
 
 PENDIENTE
+
+Crear función que tome una lista de estrategias y entregue un DataFrame con los correspondientes valores de cada estrategia.
+
+
+### Parte 5. Estadísticas Descriptivas de Estrategias Seleccionadas
+
+PENDIENTE
+
+Crear visualización para las estrategias analizadas.
+
 
 ### Anexos. Bases de datos auxiliares
 
