@@ -22,9 +22,15 @@ Valores cuota procesados quedan guardados en base SQLite.
 
 
 
-### Parte 2. Archivo de Avisos de Cambio de Fondos
+### Parte 2. Estrategias de Inversión
 
-Fuente: https://www.felicesyforrados.cl/resultados/
+En esta parte del proyecto, se procesarán las estrategias de inversión disponibles (hasta ahora, fondos pasivos, y las recomendaciones de Felices y Forrados), creado una interfaz para obtener información relevante según las preferencias del usuario:
+
+- Fecha de inicio de la inversión
+- Fecha de término de la inversión
+- Estrategia a seguir (alguno de los multifondos, o FyF)
+
+Fuente de recomendaciones de FyF: https://www.felicesyforrados.cl/resultados/
 
 Snapshot al 2 de diciembre de 2020:
 
@@ -34,7 +40,8 @@ Snapshot al 2 de diciembre de 2020:
 
 
 
-### Parte 3. Simulador de Escenarios
+### Parte 3. Simulador de Rentabilidad
+
 
 ### Parte 4. Análisis Comparativo Multi Fondos vs Estrategias Activas
 
