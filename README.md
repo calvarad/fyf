@@ -31,13 +31,16 @@ Valores cuota procesados quedan guardados en base SQLite.
 
 ### Parte 2. Estrategias de Inversión
 
-En esta parte del proyecto, se procesarán las estrategias de inversión disponibles (hasta ahora, fondos pasivos, y las recomendaciones de Felices y Forrados), creado una interfaz para obtener información relevante según las preferencias del usuario:
+En esta parte del proyecto, se procesarán las estrategias de inversión disponibles (hasta ahora, fondos pasivos, y las recomendaciones de Felices y Forrados), creado una interfaz para obtener información relevante según las preferencias del usuario.
 
+Parámetros claves:
 - Fecha de inicio de la inversión
 - Fecha de término de la inversión
 - Nombre de la estrategia a seguir (alguno de los multifondos, o "FF")
 
+
 Interfaz principal es el objeto "BaseEstrategias", que permite procesar las estrategias disponibles y adaptarlas a lo requerido por el usuario.
+
 
 VER DEMOSTRACIÓN AQUÍ: [2_avisos_cambio_fondos/test_estrategias.ipynb](/2_avisos_cambio_fondos/test_estrategias.ipynb)
 
@@ -62,9 +65,6 @@ Snapshot al 2 de diciembre de 2020:
 
 Usando la base de estrategias de la Parte 2, en esta parte se puede obtener una serie histórica del monto invertido inicialmente, de acuerdo a la evolución de los valores cuotas de los fondos seleccionados en una determinada estrategia.
 
-VER DEMOSTRACIÓN AQUÍ: [3_simulador/test_valores_cuota.ipynb](/3_simulador/test_valores_cuota.ipynb)
-
-
 Parámetros claves:
 - estrategia: Debe ingresarse la estrategia sobre la cual se desea consultar los valores cuota.
 - afp: Debe ingresarse el nombre de la AFP sobre la cual se desea consultar los valores cuota.
@@ -72,6 +72,15 @@ Parámetros claves:
 - lag_solicitud: Este parámetro permite simular un retrazo de X días en el ingreso de la solicitud de cambio de fondo (default: 0 días hábiles)
 - lag_venta: Este parámetro permite definir en cuántos días hábiles se verifica la "venta" de las cuotas originales (por normativa, ocurre en t+2 días hábiles)
 - lag_compra: Este parámetro permite definir en cuántos días hábiles se verifica la "compra" de las cuotas nuevas (por normativa, ocurre en t+2 días hábiles)
+
+
+VER DEMOSTRACIÓN AQUÍ: [3_simulador/test_valores_cuota.ipynb](/3_simulador/test_valores_cuota.ipynb)
+
+
+**INSTRUCCIONES**
+
+1. NO es necesario correr códigos en esta parte. 
+
 
 ### Parte 4. Agregación de Múltiples Estrategias
 
