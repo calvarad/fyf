@@ -75,7 +75,7 @@ PENDIENTE
 
 - Base de datos de días hábiles (2008 a 2020)
 
-data_auxiliar/hábiles.db
+data_auxiliar/db_habiles.db
 
 Contiene información de días hábiles entre 2008 a 2020
 

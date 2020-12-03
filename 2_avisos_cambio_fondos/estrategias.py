@@ -1,6 +1,9 @@
 import pandas as pd
+import os
 
 MAPFONDOS = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
+ROOT = os.path.dirname(os.path.abspath(__file__))
+print(ROOT)
 
 class Posicion():
     'Define una Posición particular en alguno de los 5 multifondos'
@@ -66,7 +69,7 @@ class BaseEstrategias():
         return estrategia
 
     def __helper_base_ff(self):
-        df = pd.read_excel('anuncios_ff.xlsx')
+        df = pd.read_excel(ROOT+r'\anuncios_ff.xlsx')
         df.sort_values('Fecha inicio', ascending=True, inplace=True)
 
         return df
