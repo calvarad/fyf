@@ -18,13 +18,6 @@ Review of Financial Studies, 31(10), 3720-3755. [URL WP](http://economiayadminis
 - Blog "La Firme de la Rentabilida de Felices y Forrados" [URL](https://economistaflaite.com/2020/11/30/la-firme-de-la-rentabilida-de-felices-y-forrados/)
 
 
-TO-DO al 3 dic:
-- Compartir formulario mínimo (Excel) que debería construir un usuario que quiera analizar otras estrategias de inversión.
-
-WISHLIST:
-- Agregar conexión directa a base de datos de SPensiones.
-- Incorporar API de feriados. Documentación aquí: https://apis.digital.gob.cl/fl/
-
 *Errores u omisiones son de mi propia responsabilidad. Favor reportar en [ISSUES](https://github.com/calvarad/fyf/issues).*
 
 # Estructura del proyecto
@@ -139,3 +132,13 @@ Contiene información de días hábiles entre 2008 a 2020
 1. Al correr el archivo "crea_estrategia_optima.py", se crean automáticamente archivos Excel (en la carpeta 2), con sugerencias de cambio de fondo, asumiendo que alguien sería capaz de predecir cuál va a ser el fondo con el mejor rendimiento en el mes entrante.
 2. Se puede editar la sección "main" de ese archivo para crear sugerencias "óptimas" basándose en otras AFPs. 
 
+
+
+# Pendientes
+
+TO-DO al 3 dic:
+- Compartir formulario mínimo (Excel) que debería construir un usuario que quiera analizar otras estrategias de inversión.
+
+WISHLIST:
+- Agregar conexión directa a base de datos de SPensiones.
+- Incorporar API de feriados. Documentación aquí: https://apis.digital.gob.cl/fl/
