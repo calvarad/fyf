@@ -1,14 +1,16 @@
 # Rentabilidad Felices y Forrados
 
-El propósito de este repositorio es compartir código base para comparar la rentabilidad de fondos de pensiones (a.k.a. los "multifondos") versus estrategias activas de cambio de fondos.
+El propósito de este repositorio es compartir mis códigos para analizar distintas estrategias de cambios de multifondos y poder comparar así la rentabilidad de fondos de pensiones (a.k.a. los "multifondos") versus estrategias activas de cambio de fondos (estilo Felices y Forrados).
 
-Por razones de comparabilidad, se asumirá que las personas hacen una única inversión (en la fecha de inicio), y se analizará cómo esa inversión se movió en el tiempo.
+Por razones de comparabilidad, se asumirá que las personas hacen una única inversión (en la fecha de inicio), y se analizará cómo esa inversión se movió en el tiempo (*Un ejercicio más realista sería asumir un monto fijo de aportes todos los meses, pero quedará fuera del ámbito de este proyecto por el momento. En todo caso, las conclusiones principales no deberían ser afectadas por la existencia de aportes en el tiempo.*).
 
-*Un ejercicio más realista sería asumir un monto fijo de aportes todos los meses, pero quedará fuera del ámbito de este proyecto por el momento. En todo caso, las conclusiones principales no deberían ser afectadas por la existencia de aportes en el tiempo.*
+TO-DO al 3 dic:
+- Subir código para seguimiento de valor cuota de la estrategia.
+- Compartir formulario mínimo (Excel) que debería construir un usuario que quiera analizar otras estrategias de inversión.
 
-TO-DO al 2 dic:
-- Agregar conexión directa a base de datos de SPensiones
-- Incorporar posibilidad de analizar fechas de cambios arbitrarias (que usuario pueda crear y evaluar sus propias estrategias)
+WISHLIST:
+- Agregar conexión directa a base de datos de SPensiones.
+
 
 
 ### Parte 1. Valores Cuota SPensiones
@@ -35,13 +37,11 @@ En esta parte del proyecto, se procesarán las estrategias de inversión disponi
 - Monto a invertir
 - Estrategia a seguir (alguno de los multifondos, o FyF)
 
-
 Interfaz principal es el objeto "BaseEstrategias", que permite procesar las estrategias disponibles y adaptarlas a lo requerido por el usuario.
-
 
 **INSTRUCCIONES**
 
-1. NO es necesario correr códigos en esta parte. Si se desea, se puede ver archivo "test_estrategias.ipynb" para una demostración básica del objeto BaseEstrategias
+1. NO es necesario correr códigos en esta parte. Si se desea, se puede ver archivo "test_estrategias.ipynb" para una demostración básica del objeto BaseEstrategias.
 
 
 
@@ -57,9 +57,16 @@ Snapshot al 2 de diciembre de 2020:
 
 ### Parte 3. Simulador de Valores Cuota
 
-Usando las estrategias de la Parte 2, en esta parte se puede obtener una serie histórica (según las fechas ingresadas por el usuario) del valor cuota y del monto invertido inicialmente.
+Usando la base de estrategias de la Parte 2, en esta parte se puede obtener una serie histórica del valor cuota y del monto invertido inicialmente.
+
+Parámetros claves:
+- retrazo en ingreso solicitud: Este parámetro permite simular un retrazo de X días en el ingreso de la solicitud de cambio de fondo (default: 0 días hábiles)
+- lag venta: Este parámetro permite definir en cuántos días hábiles se verifica la "venta" de las cuotas originales (por normativa, ocurre en t+2 días hábiles)
+- lag compra: Este parámetro permite definir en cuántos días hábiles se verifica la "compra" de las cuotas nuevas (por normativa, ocurre en t+2 días hábiles)
 
 ### Parte 4. Análisis Comparativo Multi Fondos vs Estrategias Activas
+
+PENDIENTE
 
 ### Anexos. Bases de datos auxiliares
 
