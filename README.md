@@ -13,6 +13,7 @@ WISHLIST:
 - Agregar conexión directa a base de datos de SPensiones.
 - Incorporar API de feriados. Documentación aquí: https://apis.digital.gob.cl/fl/
 
+*Errores u omisiones son de mi propia responsabilidad. Favor reportar en [ISSUES](/issues).*
 
 
 ### Parte 1. Valores Cuota SPensiones
