@@ -10,6 +10,7 @@ TO-DO al 3 dic:
 
 WISHLIST:
 - Agregar conexión directa a base de datos de SPensiones.
+- Incorporar API de feriados. Documentación aquí: https://apis.digital.gob.cl/fl/
 
 
 
@@ -61,6 +62,7 @@ Usando la base de estrategias de la Parte 2, en esta parte se puede obtener una 
 Parámetros claves:
 - estrategia: Debe ingresarse la estrategia sobre la cual se desea consultar los valores cuota.
 - afp: Debe ingresarse el nombre de la AFP sobre la cual se desea consultar los valores cuota.
+- monto_inicial: Debe ingresarse el monto inicial a invertir (para asegurar comparabilidad entre distintas estrategias)
 - lag_solicitud: Este parámetro permite simular un retrazo de X días en el ingreso de la solicitud de cambio de fondo (default: 0 días hábiles)
 - lag_venta: Este parámetro permite definir en cuántos días hábiles se verifica la "venta" de las cuotas originales (por normativa, ocurre en t+2 días hábiles)
 - lag_compra: Este parámetro permite definir en cuántos días hábiles se verifica la "compra" de las cuotas nuevas (por normativa, ocurre en t+2 días hábiles)
@@ -71,14 +73,10 @@ PENDIENTE
 
 ### Anexos. Bases de datos auxiliares
 
-- Base de datos de feriados (2008 a 2019)
+- Base de datos de días hábiles (2008 a 2020)
 
-data_auxiliar/feriados.db
+data_auxiliar/hábiles.db
 
-Contiene información de feriados entre 2008 a 2019
+Contiene información de días hábiles entre 2008 a 2020
 
-
-- API de feriados (uso 2020 en adelante)
-
-Documentación aquí: https://apis.digital.gob.cl/fl/
 
