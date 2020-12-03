@@ -4,6 +4,12 @@
 
 ### Parte 1. Valores Cuota SPensiones
 
+En esta parte del proyecto, se procesa la información de valores cuota de la Superintendencia de Pensiones. 
+
+Archivos CSV descargados de https://www.spensiones.cl/apps/valoresCuotaFondo/vcfAFP.php
+
+Valores cuota procesados quedan guardados en base SQLite.
+
 ### Parte 2. Archivo de Avisos de Cambio de Fondos
 
 Fuente: https://www.felicesyforrados.cl/resultados/
