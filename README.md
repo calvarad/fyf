@@ -12,7 +12,7 @@ Algunas referencias relacionadas:
 - Cuevas, Bernhardt y Sanclemente (2018). *The Pied Piper of Pensioners* [URL](https://www.chapman.edu/research/institutes-and-centers/economic-science-institute/_files/ifree-papers-and-photos/bernhardt-piper_last-2018.pdf)
 - Da, Z., B. Larrain, C. Sialm, y J. Tessada. 2018. *Destabilizing Financial Advice: Evidence from Pension Fund Reallocations*. The
 Review of Financial Studies, 31(10), 3720-3755. [URL WP](http://economiayadministracion.uc.cl/personal/blarrain/papers/pension.pdf)
-- Villatoro y otros (2019). *Mislearning and (Poor) Performance of Individual Investors*. LACEA-LAMES. [URL](https://sistemas.colmex.mx/Reportes/LACEALAMES/LACEA-LAMES2019_paper_526.pdf)
+- Villatoro, F., O. Fuentes, J. Riutort, P. Searle (2019). *Mislearning and (Poor) Performance of Individual Investors*. LACEA-LAMES. [URL](https://sistemas.colmex.mx/Reportes/LACEALAMES/LACEA-LAMES2019_paper_526.pdf)
 - Superintendencia de Pensiones (2020). *Evolución y desempeño de los cambios de fondos*. Nota Técnica. [URL](https://www.spensiones.cl/portal/institucional/594/articles-13911_recurso_1.pdf)
 - Banco Central de Chile (2020). *Informe de Estabilidad Financiera - Primer Semestre".* Recuadro V.1 "Regulación de Asesores Previsionales y Estabilidad Financiera". [URL](https://www.bcentral.cl/documents/33528/2294181/IEF1_2020_rec_Regulacion_asesores.pdf)
 - Blog "La Firme de la Rentabilida de Felices y Forrados" [URL](https://economistaflaite.com/2020/11/30/la-firme-de-la-rentabilida-de-felices-y-forrados/)
