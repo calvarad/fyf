@@ -137,7 +137,7 @@ Contiene información de días hábiles entre 2008 a 2020
 # Pendientes
 
 TO-DO al 3 dic:
-- Compartir formulario mínimo (Excel) que debería construir un usuario que quiera analizar otras estrategias de inversión.
+- Compartir formulario mínimo (Excel) que debería construir un usuario que quiera analizar otras estrategias de inversión activa.
 
 WISHLIST:
 - Agregar conexión directa a base de datos de SPensiones.
