@@ -6,11 +6,8 @@ import sqlite3
 dbpath = r'../data_auxiliar/db_habiles.db'
 conn_habiles = sqlite3.connect(dbpath)
 
-    
 #lo dejo como global para que cargue solo 1 vez
 df_habiles = pd.read_sql('SELECT * FROM HABILES', conn_habiles, parse_dates=['Fecha'])
-
-print('Data días hábiles cargada. Fecha: ', datetime.datetime.now())
 
 
 def df_valores_cuota(estrategia, afp, monto_inicial, lag_solicitud, lag_venta=2, lag_compra=2):

@@ -31,9 +31,10 @@ class Estrategia():
         for pos in self.posiciones[0:3]:
             tt += str(pos) + '\n'
         
-        if len(self.posiciones) > 3:
-            tt += '...'
-
+        if len(self.posiciones) > 4:
+            tt += '...\n' 
+        tt += str(self.posiciones[-1]) + '\n'
+        
         return tt
 
 class BaseEstrategias():
