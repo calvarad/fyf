@@ -61,7 +61,7 @@ Usando la base de estrategias de la Parte 2, en esta parte se puede obtener una 
 Parámetros claves:
 - estrategia: Debe ingresarse la estrategia sobre la cual se desea consultar los valores cuota.
 - afp: Debe ingresarse el nombre de la AFP sobre la cual se desea consultar los valores cuota.
-- retrazo_solicitud: Este parámetro permite simular un retrazo de X días en el ingreso de la solicitud de cambio de fondo (default: 0 días hábiles)
+- lag_solicitud: Este parámetro permite simular un retrazo de X días en el ingreso de la solicitud de cambio de fondo (default: 0 días hábiles)
 - lag_venta: Este parámetro permite definir en cuántos días hábiles se verifica la "venta" de las cuotas originales (por normativa, ocurre en t+2 días hábiles)
 - lag_compra: Este parámetro permite definir en cuántos días hábiles se verifica la "compra" de las cuotas nuevas (por normativa, ocurre en t+2 días hábiles)
 
