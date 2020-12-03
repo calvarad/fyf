@@ -86,10 +86,21 @@ VER DEMOSTRACIÓN AQUÍ: [3_simulador/test_valores_cuota.ipynb](/3_simulador/tes
 
 ### Parte 4. Agregación de Múltiples Estrategias
 
-PENDIENTE
+En esta sección se pueden comparar diferentes estrategias.
 
-Crear función que tome una lista de estrategias y entregue un DataFrame con los correspondientes valores de cada estrategia.
+Parámetros claves:
+lista_estrategias: una lista con las estrategias a comparar
+afp: 
+monto_inicial:
+- lag_solicitud: Este parámetro permite simular un retrazo de X días en el ingreso de la solicitud de cambio de fondo (default: 0 días hábiles)
 
+
+VER DEMOSTRACIÓN AQUÍ: [4_comparador_estrategias/test_comparador.ipynb](/4_comparador_estrategias/test_comparador.ipynb)
+
+
+**INSTRUCCIONES**
+
+1. NO es necesario correr códigos en esta parte. 
 
 ### Parte 5. Estadísticas Descriptivas de Estrategias Seleccionadas
 
@@ -100,11 +111,19 @@ Crear visualización para las estrategias analizadas. Usar función desarrollada
 
 ### Anexos. Bases de datos auxiliares
 
-- Base de datos de días hábiles (2008 a 2020)
+##### Base de datos de días hábiles (2008 a 2020)
 
 [data_auxiliar/db_habiles.db](/data_auxiliar/db_habiles.db)
 
-
 Contiene información de días hábiles entre 2008 a 2020
 
+
+##### Creación de Archivos con estrategias "óptimas".
+
+[data_auxiliar/crea_estrategia_optima.py](/data_auxiliar/crea_estrategia_optima.py)
+
+**INSTRUCCIONES**
+
+1. Al correr el archivo "crea_estrategia_optima.py", se crean automáticamente archivos Excel (en la carpeta 2), con sugerencias de cambio de fondo, asumiendo que alguien sería capaz de predecir cuál va a ser el fondo con el mejor rendimiento en el mes entrante.
+2. Se puede editar la sección "main" de ese archivo para crear sugerencias "óptimas" basándose en otras AFPs. 
 
