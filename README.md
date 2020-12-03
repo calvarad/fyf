@@ -1,11 +1,12 @@
-# Rentabilidad Felices y Forrados
+# Estrategias de Cambio de Fondos de Pensiones
 
-El propósito de este repositorio es compartir mis códigos para analizar distintas estrategias de cambios de multifondos y poder comparar así la rentabilidad de fondos de pensiones (a.k.a. los "multifondos") versus estrategias activas de cambio de fondos (estilo Felices y Forrados).
+El propósito de este repositorio es compartir una metodología para analizar distintas estrategias de cambios de fondos de pensiones y poder comparar así la rentabilidad de los fondos de pensiones chilenos (estrategias "pasivas") versus estrategias activas de cambio de fondos (estilo *Felices y Forrados*).
 
-Por razones de comparabilidad, se asumirá que las personas hacen una única inversión (en la fecha de inicio), y se analizará cómo esa inversión se movió en el tiempo (*Un ejercicio más realista sería asumir un monto fijo de aportes todos los meses, pero quedará fuera del ámbito de este proyecto por el momento. En todo caso, las conclusiones principales no deberían ser afectadas por la existencia de aportes en el tiempo.*).
+Para asegurar la comparabilidad en el tiempo, se asume que las personas hacen una única inversión en una fecha de inicio determinada y siguiendo una estrategia determinada. (*Un ejercicio más realista sería asumir un monto fijo de aportes todos los meses, pero quedará fuera del ámbito de este proyecto por el momento. En todo caso, las conclusiones principales no deberían ser afectadas por la existencia de aportes en el tiempo.*).
+
+Los procedimientos desarrollados aquí permiten analizar cómo la inversión inicial evoluciona en el tiempo.
 
 TO-DO al 3 dic:
-- Subir código para seguimiento de valor cuota de la estrategia.
 - Compartir formulario mínimo (Excel) que debería construir un usuario que quiera analizar otras estrategias de inversión.
 
 WISHLIST:
