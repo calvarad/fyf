@@ -19,7 +19,7 @@ En esta parte del proyecto, se procesa la información de valores cuota de la Su
 
 **INSTRUCCIONES**
 
-1. Correr archivo 1_valores_cuota/parse_valores_cuota.py
+1. Correr archivo [1_valores_cuota/parse_valores_cuota.py](/1_valores_cuota/parse_valores_cuota.py)
 
 Valores cuota procesados quedan guardados en base SQLite.
 
