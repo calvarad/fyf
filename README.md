@@ -2,7 +2,7 @@
 
 El propósito de este repositorio es compartir una metodología para analizar distintas estrategias de cambios de fondos de pensiones y poder comparar así la rentabilidad de los fondos de pensiones chilenos (estrategias "pasivas") versus estrategias activas de cambio de fondos (estilo *Felices y Forrados*).
 
-Para asegurar la comparabilidad en el tiempo, se asume que las personas hacen una única inversión en una fecha de inicio determinada y siguiendo una estrategia determinada. (*Un ejercicio más realista sería asumir un monto fijo de aportes todos los meses, pero quedará fuera del ámbito de este proyecto por el momento. En todo caso, las conclusiones principales no deberían ser afectadas por la existencia de aportes en el tiempo.*).
+Para asegurar la comparabilidad en el tiempo, se asume que las personas hacen una única inversión en una fecha de inicio determinada y siguiendo una estrategia determinada. (*Un ejercicio más realista debería incorporar información de aportes (o retiros) mensuales y comisiones, pero quedará fuera del ámbito de este proyecto por el momento. En todo caso, las conclusiones principales no deberían ser afectadas por estos elementos.*).
 
 Los procedimientos desarrollados aquí permiten analizar cómo la inversión inicial evoluciona en el tiempo.
 
