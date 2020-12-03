@@ -39,9 +39,12 @@ En esta parte del proyecto, se procesarán las estrategias de inversión disponi
 
 Interfaz principal es el objeto "BaseEstrategias", que permite procesar las estrategias disponibles y adaptarlas a lo requerido por el usuario.
 
+VER DEMOSTRACIÓN AQUÍ: [2_avisos_cambio_fondos/test_estrategias.ipynb](/2_avisos_cambio_fondos/test_estrategias.ipynb)
+
+
 **INSTRUCCIONES**
 
-1. NO es necesario correr códigos en esta parte. Si se desea, se puede ver archivo "test_estrategias.ipynb" para una demostración básica del objeto BaseEstrategias.
+1. NO es necesario correr códigos en esta parte. 
 
 
 
@@ -58,6 +61,9 @@ Snapshot al 2 de diciembre de 2020:
 ### Parte 3. Simulador de Valores Cuota
 
 Usando la base de estrategias de la Parte 2, en esta parte se puede obtener una serie histórica del valor cuota y del monto invertido inicialmente.
+
+VER DEMOSTRACIÓN AQUÍ: [3_simulador/test_valores_cuota.ipynb](/3_simulador/test_valores_cuota.ipynb)
+
 
 Parámetros claves:
 - estrategia: Debe ingresarse la estrategia sobre la cual se desea consultar los valores cuota.
