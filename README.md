@@ -34,8 +34,7 @@ En esta parte del proyecto, se procesarán las estrategias de inversión disponi
 
 - Fecha de inicio de la inversión
 - Fecha de término de la inversión
-- Monto a invertir
-- Estrategia a seguir (alguno de los multifondos, o FyF)
+- Nombre de la estrategia a seguir (alguno de los multifondos, o "FF")
 
 Interfaz principal es el objeto "BaseEstrategias", que permite procesar las estrategias disponibles y adaptarlas a lo requerido por el usuario.
 
@@ -60,9 +59,11 @@ Snapshot al 2 de diciembre de 2020:
 Usando la base de estrategias de la Parte 2, en esta parte se puede obtener una serie histórica del valor cuota y del monto invertido inicialmente.
 
 Parámetros claves:
-- retrazo en ingreso solicitud: Este parámetro permite simular un retrazo de X días en el ingreso de la solicitud de cambio de fondo (default: 0 días hábiles)
-- lag venta: Este parámetro permite definir en cuántos días hábiles se verifica la "venta" de las cuotas originales (por normativa, ocurre en t+2 días hábiles)
-- lag compra: Este parámetro permite definir en cuántos días hábiles se verifica la "compra" de las cuotas nuevas (por normativa, ocurre en t+2 días hábiles)
+- estrategia: Debe ingresarse la estrategia sobre la cual se desea consultar los valores cuota.
+- afp: Debe ingresarse el nombre de la AFP sobre la cual se desea consultar los valores cuota.
+- retrazo_solicitud: Este parámetro permite simular un retrazo de X días en el ingreso de la solicitud de cambio de fondo (default: 0 días hábiles)
+- lag_venta: Este parámetro permite definir en cuántos días hábiles se verifica la "venta" de las cuotas originales (por normativa, ocurre en t+2 días hábiles)
+- lag_compra: Este parámetro permite definir en cuántos días hábiles se verifica la "compra" de las cuotas nuevas (por normativa, ocurre en t+2 días hábiles)
 
 ### Parte 4. Análisis Comparativo Multi Fondos vs Estrategias Activas
 

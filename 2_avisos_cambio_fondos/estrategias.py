@@ -15,13 +15,17 @@ class Posicion():
     
 class Estrategia():
     'Una Estrategia es una colección (lista) de posiciones'
-    def __init__(self, tipo_estrategia):
+    def __init__(self, fecha_ini, fecha_end, tipo_estrategia):
+        self.fecha_ini = fecha_ini
+        self.fecha_end = fecha_end
         self.tipo_estrategia = tipo_estrategia
         self.posiciones = []
+    
     def add_posicion(self, posicion):
         self.posiciones.append(posicion)
+    
     def __repr__(self):
-        tt = 'Estrategia: {}\n\n'.format(self.tipo_estrategia)
+        tt = 'Estrategia: {}\nFecha Inicio: {}\nFecha Término: {}\n\n'.format(self.tipo_estrategia, self.fecha_ini, self.fecha_end)
         for pos in self.posiciones[0:3]:
             tt += str(pos) + '\n'
         
@@ -35,10 +39,10 @@ class BaseEstrategias():
         self.estrategias_posibles = ['FF', 'A', 'B', 'C', 'D', 'E']
         self.data_ff = self.__helper_base_ff()
 
-    def crea_estrategia(self, fecha_ini, fecha_end, monto, tipo_estrategia):
+    def crea_estrategia(self, fecha_ini, fecha_end, tipo_estrategia):
         assert tipo_estrategia in self.estrategias_posibles, 'No existe esa estrategia'
 
-        estrategia = Estrategia(tipo_estrategia)
+        estrategia = Estrategia(fecha_ini, fecha_end, tipo_estrategia)
         porcentajes = [0] * 5
 
         if tipo_estrategia == 'FF':
