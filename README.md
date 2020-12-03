@@ -1,9 +1,20 @@
-# Revisión Rentabilidad Estrategia Felices y Forrados
+# Rentabilidad Felices y Forrados
+
 
 
 ### Parte 1. Valores Cuota SPensiones
 
 ### Parte 2. Archivo de Avisos de Cambio de Fondos
+
+Fuente: https://www.felicesyforrados.cl/resultados/
+
+Snapshot al 2 de diciembre de 2020:
+
+<img src="/data_auxiliar/snapshot_20201202.PNG"
+     alt="snapshot"
+     style="float: left; margin-right: 10px;" />
+
+
 
 ### Parte 3. Simulador de Escenarios
 
