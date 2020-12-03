@@ -6,9 +6,16 @@
 
 En esta parte del proyecto, se procesa la información de valores cuota de la Superintendencia de Pensiones. 
 
-Archivos CSV descargados de https://www.spensiones.cl/apps/valoresCuotaFondo/vcfAFP.php
+**INSTRUCCIONES**
+
+1. Correr archivo 1_valores_cuota/parse_valores_cuota.py
 
 Valores cuota procesados quedan guardados en base SQLite.
+
+
+*Archivos CSV descargados de https://www.spensiones.cl/apps/valoresCuotaFondo/vcfAFP.php*
+
+
 
 ### Parte 2. Archivo de Avisos de Cambio de Fondos
 
