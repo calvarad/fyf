@@ -14,8 +14,11 @@ def agrega_estrategias(lista_estrategias, afp, monto_inicial, lag_solicitud):
     '''
     aux = []
     first = True
-    for est in lista_estrategias:
-        df = df_valores_cuota(est, afp, monto_inicial, lag_solicitud, lag_venta=2, lag_compra=2)
+    if type(lag_solicitud) != list:
+        lag_solicitud = [lag_solicitud]*len(lista_estrategias)
+
+    for i, est in enumerate(lista_estrategias):
+        df = df_valores_cuota(est, afp, monto_inicial, lag_solicitud[i], lag_venta=2, lag_compra=2)
         col = [c for c in df.columns if 'Val' in c]
 
         df = df[['Fecha'] + col]
