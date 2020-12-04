@@ -3,15 +3,18 @@ import pandas as pd
 import sqlite3
 
 
-dbpath = r'../data_auxiliar/db_habiles.db'
-conn_habiles = sqlite3.connect(dbpath)
+def generate_df_valores_cuota(estrategia, afp, monto_inicial,
+                     lag_solicitud, df_dias_habiles,
+                     lag_venta=2,
+                      lag_compra=2) -> pd.DataFrame:
+    """
+    Retorna un dataframe con la serie histórica de monto_inicial,
+    ajustado según el valor cuota asociado a una estrategia de inversión
+    determinada
 
-#lo dejo como global para que cargue solo 1 vez
-df_habiles = pd.read_sql('SELECT * FROM HABILES', conn_habiles, parse_dates=['Fecha'])
-
-
-def df_valores_cuota(estrategia, afp, monto_inicial, lag_solicitud, lag_venta=2, lag_compra=2):
-
+    Cuando hay cambios de fondo es necesario ajustar para reflejar
+    el mismo valor
+    """
     fecha_ini = estrategia.fecha_ini
     fecha_end = estrategia.fecha_end
 
@@ -40,8 +43,10 @@ def df_valores_cuota(estrategia, afp, monto_inicial, lag_solicitud, lag_venta=2,
             
             new_allocation = estrategia.posiciones[fechas_cambios[fecha]].porcentajes
 
-            sell_date = get_posible_date(fecha_solicitud, lag_venta)
-            buy_date =  get_posible_date(fecha_solicitud, lag_compra)
+            sell_date = get_posible_date(df_dias_habiles, fecha_solicitud,
+                                        lag_venta)
+            buy_date =  get_posible_date(df_dias_habiles, fecha_solicitud,
+                                        lag_compra)
 
             valores_ini = get_valores(df_valores, sell_date)
             valores_end = get_valores(df_valores, buy_date)
@@ -123,22 +128,25 @@ def get_num_cuotas(valor, new_allocation, valores_end):
     
     return num_cuotas
 
-def get_posible_date(fecha_cambio, days_ahead):
+def get_posible_date(df_dias_habiles, fecha_cambio, days_ahead):
     
-    sel = (df_habiles['Fecha'].dt.date >= fecha_cambio) & (df_habiles['Habil'] == True)
+    sel = ((df_dias_habiles['Fecha'].dt.date >= fecha_cambio) 
+    & (df_dias_habiles['Habil'] == True))
     
-    df_habiles_sel = df_habiles[sel]
+    df_habiles_sel = df_dias_habiles[sel]
     
     fecha_ahead = df_habiles_sel.iloc[days_ahead]['Fecha']
         
     return fecha_ahead
+
 
 def get_valores(df_valores, fecha):
     values = df_valores.loc[fecha.strftime('%Y-%m-%d')]
     #strftime('%Y-%m-%d')
     return list(values)
 
-def get_monto_valorizado(cuotas, valores):
+
+def get_monto_valorizado(cuotas, valores) -> int:
     suma = 0
     for c, v in zip(cuotas, valores):
         suma += c * v

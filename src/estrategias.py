@@ -1,6 +1,9 @@
+import datetime
+import sys
 import pandas as pd
 import os
 from typing import Optional, List
+from .utils import generate_df_valores_cuota
 
 MAPFONDOS = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -100,9 +103,41 @@ class Estrategia():
         if len(self.posiciones) > 4:
             tt += '...\n' 
         tt += str(self.posiciones[-1]) + '\n'
-        
+
         return tt
 
 
+
+def agrega_estrategias(lista_estrategias, df_dias_habiles,
+                        afp, monto_inicial, 
+                        lag_solicitud) -> pd.DataFrame:
+    '''
+    Toma varias estrategias y crea un DataFrame con todas ellas consolidadas
+    '''
+
+    if type(lag_solicitud) != list:
+        lag_solicitud = [lag_solicitud]*len(lista_estrategias)
+
+    for i, estrategia in enumerate(lista_estrategias):
+
+        df = generate_df_valores_cuota(estrategia, afp, monto_inicial,
+                              lag_solicitud[i], 
+                              df_dias_habiles, lag_venta=2, lag_compra=2)
+        col = [c for c in df.columns if 'Val' in c]
+
+        df = df[['Fecha'] + col]
+
+        if i == 0:
+            df_out = df
+        else:
+            df_out = df_out.merge(df, on=['Fecha'], how='outer')
+
+    #arreglo los valores por si hay missings
+    df_out.sort_values('Fecha', inplace=True)
+    df_out.set_index('Fecha', inplace=True)
+    df_out.fillna(method='ffill', inplace=True)
+    df_out.reset_index(inplace=True)
+
+    return df_out
 
 
