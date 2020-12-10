@@ -5,7 +5,7 @@ import sqlite3
 
 FONDOS = ['A', 'B', 'C', 'D', 'E']
 
-DB_PATH = 'valores_cuota.db'
+DB_PATH = r'../processed_data/valores_cuota.db'
 
 CONN = sqlite3.connect(DB_PATH)
 
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
     first = True
     for fondo in FONDOS:
-        data = parse_file('vcf{}2010-2020.csv'.format(fondo), fondo)
+        data = parse_file(r'../raw_data/vcf{}2010-2020.csv'.format(fondo), fondo)
         if first:
             data.to_sql('VALORES_CUOTA', con=CONN, if_exists='replace')
             first = False

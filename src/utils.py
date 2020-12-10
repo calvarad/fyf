@@ -85,7 +85,7 @@ def generate_df_valores_cuota(estrategia, afp, monto_inicial,
 
 
 def get_df_valores(afp, fecha_ini, fecha_end):
-    path = r'../1_valores_cuota/valores_cuota.db'
+    path = r'../processed_data/valores_cuota.db'
     conn = sqlite3.connect(path)
 
     query = '''
