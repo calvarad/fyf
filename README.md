@@ -100,7 +100,7 @@ monto_inicial:
 - lag_solicitud: Este parámetro permite simular un retrazo de X días en el ingreso de la solicitud de cambio de fondo (default: 0 días hábiles)
 
 
-VER DEMOSTRACIÓN AQUÍ: [4_comparador_estrategias/test_comparador.ipynb](/4_comparador_estrategias/test_comparador.ipynb)
+VER DEMOSTRACIÓN AQUÍ: [test/test_comparador.ipynb](/test/test_comparador.ipynb)
 
 
 **INSTRUCCIONES**
@@ -118,25 +118,25 @@ Crear visualización para las estrategias analizadas. Usar función desarrollada
 
 #### Base de datos de días hábiles (2008 a 2020)
 
-[data_auxiliar/db_habiles.db](/data_auxiliar/db_habiles.db)
+[processed_data/db_habiles.db](/processed_data/db_habiles.db)
 
 Contiene información de días hábiles entre 2008 a 2020
 
 
 #### Creación de Archivos con estrategias "óptimas".
 
-[data_auxiliar/crea_estrategia_optima.py](/data_auxiliar/crea_estrategia_optima.py)
+[src/crea_estrategia_optima.py](/src/crea_estrategia_optima.py)
 
 **INSTRUCCIONES**
 
-1. Al correr el archivo "crea_estrategia_optima.py", se crean automáticamente archivos Excel (en la carpeta 2), con sugerencias de cambio de fondo, asumiendo que alguien sería capaz de predecir cuál va a ser el fondo con el mejor rendimiento en el mes entrante.
+1. Al correr el archivo "crea_estrategia_optima.py", se crean automáticamente archivos Excel (en carpeta [processed_data](/processed_data/)), con sugerencias de cambio de fondo, asumiendo que alguien sería capaz de predecir cuál va a ser el fondo con el mejor rendimiento en el mes entrante.
 2. Se puede editar la sección "main" de ese archivo para crear sugerencias "óptimas" basándose en otras AFPs. 
 
 
 
 # Pendientes
 
-TO-DO al 3 dic:
+TO-DO:
 - Compartir formulario mínimo (Excel) que debería construir un usuario que quiera analizar otras estrategias de inversión activa.
 
 WISHLIST:
