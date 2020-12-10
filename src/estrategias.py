@@ -6,8 +6,8 @@ from typing import Optional, List
 from .utils import generate_df_valores_cuota
 
 MAPFONDOS = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4}
-ROOT = os.path.dirname(os.path.abspath(__file__))
-
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print(ROOT)
 
 class Posicion():
     'Define una Posición particular en alguno de los 5 multifondos'
