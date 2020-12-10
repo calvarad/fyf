@@ -62,7 +62,7 @@ VER DEMOSTRACIÓN AQUÍ: [test/test_estrategias.ipynb](/test/test_estrategias.ip
 
 Snapshot al 2 de diciembre de 2020:
 
-<img src="/data_auxiliar/snapshot_20201202.PNG"
+<img src="/src/snapshot_20201202.PNG"
      alt="snapshot"
      style="float: left; margin-right: 10px;" />
 
