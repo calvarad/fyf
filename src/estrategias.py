@@ -123,7 +123,7 @@ def agrega_estrategias(lista_estrategias, df_dias_habiles,
         df = generate_df_valores_cuota(estrategia, afp, monto_inicial,
                               lag_solicitud[i], 
                               df_dias_habiles, lag_venta=2, lag_compra=2)
-        col = [c for c in df.columns if 'Val' in c]
+        col = [c for c in df.columns if 'V_' in c]
 
         df = df[['Fecha'] + col]
 

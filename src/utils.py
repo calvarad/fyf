@@ -78,7 +78,7 @@ def generate_df_valores_cuota(estrategia, afp, monto_inicial,
         aux_data.append(data)
         
     df = pd.DataFrame.from_records(aux_data, columns = [
-        'Fecha', 'Val_{}_lag_{}'.format(estrategia.nombre_estrategia, lag_solicitud), 
+        'Fecha', 'V_{}_{}_lag_{}'.format(afp, estrategia.nombre_estrategia, lag_solicitud), 
         'CP_A', 'CP_B', 'CP_C', 'CP_D', 'CP_E'])
     
     df['Fecha'] = pd.to_datetime(df['Fecha'], format='%Y-%m-%d')
@@ -156,7 +156,7 @@ def get_monto_valorizado(cuotas, valores) -> int:
 
 def cuadro_rentabilidades(df_valores_cuota, df_dias_habiles):
     
-    cols = [c for c in df_valores_cuota.columns if 'Val_' in c]
+    cols = [c for c in df_valores_cuota.columns if 'V_' in c]
     
     df_aux = fix_fechas(df_valores_cuota, df_dias_habiles)
 

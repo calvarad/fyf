@@ -38,7 +38,7 @@ def estrategia_optima(afp, df_dias_habiles, fecha_inicio,
     df_mes = df_start.merge(df_end, on='YM', how='inner')
 
     for fondo in FONDOS:
-        df_mes['rent_{}'.format(fondo)] = df_mes['Val_{}_lag_0_y'.format(fondo)] / df_mes['Val_{}_lag_0_x'.format(fondo)] - 1
+        df_mes['rent_{}'.format(fondo)] = df_mes['V_{}_{}_lag_0_y'.format(afp, fondo)] / df_mes['V_{}_{}_lag_0_x'.format(afp, fondo)] - 1
 
     data = []
     for i, row in df_mes.iterrows():
