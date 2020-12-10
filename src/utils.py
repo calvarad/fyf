@@ -1,7 +1,9 @@
 import datetime
+import os
 import pandas as pd
 import sqlite3
 
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def generate_df_valores_cuota(estrategia, afp, monto_inicial,
                      lag_solicitud, df_dias_habiles,
@@ -85,7 +87,7 @@ def generate_df_valores_cuota(estrategia, afp, monto_inicial,
 
 
 def get_df_valores(afp, fecha_ini, fecha_end):
-    path = r'../processed_data/valores_cuota.db'
+    path = ROOT + r'/processed_data/valores_cuota.db'
     conn = sqlite3.connect(path)
 
     query = '''

@@ -5,8 +5,11 @@ sys.path.append("../")
 
 from src import Estrategia, generate_df_valores_cuota, agrega_estrategias
 import datetime
+import os
 import pandas as pd
 import sqlite3
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 FONDOS = ['A', 'B', 'C', 'D', 'E']
 
@@ -65,7 +68,7 @@ def parse_sugerencia(row):
 if __name__ == '__main__':
     #Load df_dias_habiles
     #Cargar base de días hábiles
-    dbpath = r'../data_auxiliar/db_habiles.db'
+    dbpath = ROOT + r'/processed_data/db_habiles.db'
     conn_habiles = sqlite3.connect(dbpath)
     df_dias_habiles = pd.read_sql('SELECT * FROM HABILES',
                               conn_habiles, parse_dates=['Fecha'])
@@ -80,4 +83,4 @@ if __name__ == '__main__':
         df = estrategia_optima(afp, df_dias_habiles,
          fecha_ini, fecha_end, monto_inicial)
         
-        df.to_excel('../2_avisos_cambio_fondos/optima_{}.xlsx'.format(afp))
+        df.to_excel(ROOT+r'/processed_data/optima_{}.xlsx'.format(afp))
