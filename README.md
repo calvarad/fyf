@@ -24,12 +24,12 @@ Review of Financial Studies, 31(10), 3720-3755. [URL WP](http://economiayadminis
 
 ### Parte 1. Valores Cuota SPensiones
 
-En esta parte del proyecto, se procesa la información de valores cuota de la Superintendencia de Pensiones. 
+El input principal de este proyecto son los Valores Cuota de los multifondos. En esta parte del proyecto, se procesa la información de valores cuota de la Superintendencia de Pensiones. 
 
 **INSTRUCCIONES**
 
-1. Correr archivo [1_valores_cuota/parse_valores_cuota.py](/1_valores_cuota/parse_valores_cuota.py)
-2. Valores cuota procesados quedan guardados en base SQLite.
+1. Correr archivo [src/parse_valores_cuota.py](/src/parse_valores_cuota.py)
+2. Valores cuota procesados quedan guardados en base SQLite, en carpeta [processed_data](/processed_data/)
 
 
 *Archivos CSV descargados de https://www.spensiones.cl/apps/valoresCuotaFondo/vcfAFP.php*
@@ -38,7 +38,7 @@ En esta parte del proyecto, se procesa la información de valores cuota de la Su
 
 ### Parte 2. Estrategias de Inversión
 
-En esta parte del proyecto, se procesan las estrategias de inversión disponibles (estrategias pasivas o activas), a través de una interfaz para orderar las sugerencias de cambio de fondos, según las preferencias del usuario.
+Otro componente de este proyecto es la interfaz que permite procesar las estrategias de inversión disponibles (estrategias pasivas o activas), para orderar las sugerencias de cambio de fondos, según las preferencias del usuario.
 
 Parámetros claves:
 - Fecha de inicio de la inversión
@@ -49,7 +49,7 @@ Parámetros claves:
 Interfaz principal es el objeto "Estrategia", que permite procesar las estrategias disponibles y adaptarlas a lo requerido por el usuario.
 
 
-VER DEMOSTRACIÓN AQUÍ: [2_avisos_cambio_fondos/test_estrategias.ipynb](/2_avisos_cambio_fondos/test_estrategias.ipynb)
+VER DEMOSTRACIÓN AQUÍ: [test/test_estrategias.ipynb](/test/test_estrategias.ipynb)
 
 
 **INSTRUCCIONES**
