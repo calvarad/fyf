@@ -81,7 +81,7 @@ Parámetros claves:
 - lag_compra: Este parámetro permite definir en cuántos días hábiles se verifica la "compra" de las cuotas nuevas (por normativa, ocurre en t+2 días hábiles)
 
 
-VER DEMOSTRACIÓN AQUÍ: [3_simulador/test_valores_cuota.ipynb](/3_simulador/test_valores_cuota.ipynb)
+VER DEMOSTRACIÓN AQUÍ: [test/test_valores_cuota.ipynb](/test/test_valores_cuota.ipynb)
 
 
 **INSTRUCCIONES**
