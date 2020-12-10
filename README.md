@@ -20,6 +20,12 @@ Review of Financial Studies, 31(10), 3720-3755. [URL WP](http://economiayadminis
 
 *Errores u omisiones son de mi propia responsabilidad. Favor reportar en [ISSUES](https://github.com/calvarad/fyf/issues).*
 
+# Análisis de Múltiples Estrategias
+
+En el archivo [MAIN](/MAIN.ipynb) se pueden comparar diferentes estrategias.
+
+
+
 # Estructura del proyecto
 
 ### Parte 1. Valores Cuota SPensiones
@@ -89,29 +95,6 @@ VER DEMOSTRACIÓN AQUÍ: [test/test_valores_cuota.ipynb](/test/test_valores_cuot
 1. NO es necesario correr códigos en esta parte. 
 
 
-### Parte 4. Agregación de Múltiples Estrategias
-
-En esta sección se pueden comparar diferentes estrategias.
-
-Parámetros claves:
-lista_estrategias: una lista con las estrategias a comparar
-afp: 
-monto_inicial:
-- lag_solicitud: Este parámetro permite simular un retrazo de X días en el ingreso de la solicitud de cambio de fondo (default: 0 días hábiles)
-
-
-VER DEMOSTRACIÓN AQUÍ: [test/test_comparador.ipynb](/test/test_comparador.ipynb)
-
-
-**INSTRUCCIONES**
-
-1. NO es necesario correr códigos en esta parte. 
-
-### Parte 5. Estadísticas Descriptivas de Estrategias Seleccionadas
-
-PENDIENTE
-
-Crear visualización para las estrategias analizadas. Usar función desarrollada en la Parte 4.
 
 
 ### Anexos. Bases de datos auxiliares
