@@ -29,7 +29,7 @@ El input principal de este proyecto son los Valores Cuota de los multifondos. En
 **INSTRUCCIONES**
 
 1. Correr archivo [src/parse_valores_cuota.py](/src/parse_valores_cuota.py)
-2. Valores cuota procesados quedan guardados en base SQLite, en carpeta [processed_data](/processed_data/)
+2. Valores cuota procesados quedarán guardados en base SQLite, en carpeta [processed_data](/processed_data/)
 
 
 *Archivos CSV descargados de https://www.spensiones.cl/apps/valoresCuotaFondo/vcfAFP.php*
