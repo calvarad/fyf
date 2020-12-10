@@ -1,3 +1,3 @@
 from .estrategias import Estrategia, agrega_estrategias
-from .utils import generate_df_valores_cuota
+from .utils import generate_df_valores_cuota, cuadro_rentabilidades
 

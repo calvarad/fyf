@@ -153,3 +153,48 @@ def get_monto_valorizado(cuotas, valores) -> int:
     for c, v in zip(cuotas, valores):
         suma += c * v
     return suma
+
+def cuadro_rentabilidades(df_valores_cuota, df_dias_habiles):
+    
+    cols = [c for c in df_valores_cuota.columns if 'Val_' in c]
+    
+    df_aux = fix_fechas(df_valores_cuota, df_dias_habiles)
+
+    aux_data = []
+    for serie in cols:
+            
+        fecha0 = max(df_aux.index.unique()).date()
+        year0 = fecha0.year
+        month0 = fecha0.month
+        fechamtd = datetime.datetime(year0, month0, 1).date()
+        fechaytd = datetime.datetime(year0, 1, 1).date()
+        fecha1y = fecha0 - datetime.timedelta(days=365*1)
+        fecha2y = fecha0 - datetime.timedelta(days=365*2)
+        fecha3y = fecha0 - datetime.timedelta(days=365*3)
+        fecha5y = fecha0 - datetime.timedelta(days=365*5)
+        fecha8y = fecha0 - datetime.timedelta(days=365*8)
+
+        rentmtd = df_aux.loc[fecha0][serie] / df_aux.loc[fechamtd][serie] - 1
+        rentytd = df_aux.loc[fecha0][serie] / df_aux.loc[fechaytd][serie] - 1
+        rent1y = df_aux.loc[fecha0][serie] / df_aux.loc[fecha1y][serie] - 1
+        rent2y = (df_aux.loc[fecha0][serie] / df_aux.loc[fecha2y][serie]) ** (1/2) - 1
+        rent3y = (df_aux.loc[fecha0][serie] / df_aux.loc[fecha3y][serie]) ** (1/3) - 1
+        rent5y = (df_aux.loc[fecha0][serie] / df_aux.loc[fecha5y][serie]) ** (1/5) - 1
+        rent8y = (df_aux.loc[fecha0][serie] / df_aux.loc[fecha8y][serie]) ** (1/8) - 1
+        
+        aux_data.append((serie, rentmtd, rentytd, rent1y, rent2y, rent3y, rent5y, rent8y))
+
+    df = pd.DataFrame.from_records(aux_data, columns=[
+            'Serie', 'Rent MTD', 'Rent YTD', 'Rent 1y', 'Rent 2y', 'Rent 3y', 'Rent 5y', 'Rent 8y'])
+
+    return df
+
+def fix_fechas(df_valores_cuota, df_dias_habiles):
+    
+    max_fecha = max(df_valores_cuota['Fecha']).date()
+    df_aux = df_valores_cuota.merge(df_dias_habiles[df_dias_habiles['Fecha'].dt.date <= max_fecha], how='outer', on='Fecha')
+    df_aux.sort_values('Fecha', inplace=True)
+    df_aux.set_index('Fecha', inplace=True)
+    df_aux.fillna(method='ffill', inplace=True)
+    
+    return df_aux
