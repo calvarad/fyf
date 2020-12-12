@@ -37,7 +37,7 @@ lag_solicitud = st.sidebar.slider(
 def install_xlrd():
     os.system("bash pip install xlrd==1.2.0")
 
-install_xlrd()
+#install_xlrd()
 
 @st.cache
 def load_data(afp, monto_inicial, lag_solicitud):

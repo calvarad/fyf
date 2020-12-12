@@ -2,6 +2,5 @@ numpy
 pandas
 matplotlib
 seaborn
-sqlite3
 xlrd==1.2.0
 
