@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 import pandas as pd
 import numpy as np
+import os
 from src import Estrategia, agrega_estrategias
 import sqlite3
 
@@ -31,6 +32,12 @@ estrategia_ff = Estrategia(fecha_ini, fecha_end, 'FF',
 monto_inicial = 100
 lag_solicitud = st.sidebar.slider(
     'Lag solicitud', 0, 5, value=0)
+
+@st.cache
+def install_xlrd():
+    os.system("bash pip install xlrd==1.2.0")
+
+install_xlrd()
 
 @st.cache
 def load_data(afp, monto_inicial, lag_solicitud):
