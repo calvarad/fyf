@@ -198,3 +198,16 @@ def fix_fechas(df_valores_cuota, df_dias_habiles):
     df_aux.fillna(method='ffill', inplace=True)
     
     return df_aux
+
+
+def get_annual_interest_rate(return_perc: float, 
+                             n_years: float) -> float:
+    """
+    (1 + rx) = (1 + ra) ^ {n_years}
+
+    ra = annual return
+
+    return_perc = rx. Return over the n_years
+    """
+
+    return (1 + return_perc)**(1.0 / n_years) - 1
