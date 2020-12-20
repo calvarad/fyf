@@ -5,6 +5,7 @@ import sqlite3
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
 def generate_df_valores_cuota(estrategia, afp, monto_inicial,
                      lag_solicitud, df_dias_habiles,
                      lag_venta=2,

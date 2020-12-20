@@ -141,3 +141,33 @@ def agrega_estrategias(lista_estrategias, df_dias_habiles,
     return df_out
 
 
+def generate_returns_for_different_starting_dates(df: pd.DataFrame,
+            años_de_horizonte: int,
+            beg_period: datetime.datetime) -> pd.DataFrame:
+    """
+    Genera resultados desde el periodo inicial `beg_period`
+    para x años hacia adelante de horizonte
+    """
+    horizonte_de_tiempo = pd.Timedelta(años_de_horizonte*365, unit="d")
+    end_period = df.Fecha.max() - horizonte_de_tiempo
+    all_starting_days_of_experiment = pd.date_range(
+        beg_period, end_period, freq='d')
+
+    relevant_columns = [col for col in df.columns if col != 'Fecha']
+
+    rows = []
+    for start_date in all_starting_days_of_experiment:
+        start_data = df.loc[df.Fecha == start_date, relevant_columns]
+        end_data = df.loc[df.Fecha == start_date +
+                          horizonte_de_tiempo, relevant_columns]
+        try:
+            rows.append(
+                pd.DataFrame(100 * (end_data.values / start_data.values - 1),
+                             columns=relevant_columns, index=[start_date])
+            )
+        except:
+            pass
+
+    results = pd.concat(rows)
+
+    return results
