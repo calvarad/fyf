@@ -30,6 +30,7 @@ def parse_file(file, fondo):
             
         fecha = data[0]
         valores = data[1::2]
+        patrimonios = data[2::2]
 
         for i, name in enumerate(names):
             vc = valores[i]
@@ -38,12 +39,16 @@ def parse_file(file, fondo):
                 continue
             vc_f = float(vc.replace('.', '$').replace(',', '.').replace('$', '').strip())
 
-            aux_list.append((fecha, name + "_" + fondo, vc_f))
+            pat_int = int(patrimonios[i])
 
-    df = pd.DataFrame.from_records(aux_list, columns=['fecha_dia', 'ticker', 'valor'])
+            aux_list.append((fecha, name + "_" + fondo, vc_f, pat_int))
+
+    df = pd.DataFrame.from_records(aux_list, columns=['fecha_dia', 'ticker', 'valor', 'patrimonio'])
     
     df['valor'] = df['valor'].astype(float)
     
+    df['patrimonio'] = df['patrimonio'].astype(int)
+
     f.close()
     
     return df
