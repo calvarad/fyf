@@ -1,9 +1,7 @@
 import numpy as np
 import seaborn as sns
-import streamlit as st
 import pandas as pd
 
-@st.cache
 def get_results_for_different_starting_days(df, horizonte_de_tiempo: pd.Timedelta):
 
     beg_period = df.Fecha.min()
