@@ -39,7 +39,8 @@ def parse_file(file, fondo):
                 continue
             vc_f = float(vc.replace('.', '$').replace(',', '.').replace('$', '').strip())
 
-            pat_int = int(patrimonios[i])
+            #print(patrimonios[i])
+            pat_int = float(patrimonios[i])
 
             aux_list.append((fecha, name + "_" + fondo, vc_f, pat_int))
 
@@ -47,7 +48,7 @@ def parse_file(file, fondo):
     
     df['valor'] = df['valor'].astype(float)
     
-    df['patrimonio'] = df['patrimonio'].astype(int)
+    df['patrimonio'] = df['patrimonio'].astype(float)
 
     f.close()
     
