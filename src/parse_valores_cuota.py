@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
     first = True
     for fondo in FONDOS:
-        data = parse_file(r'../raw_data/vcf{}2010-2020.csv'.format(fondo), fondo)
+        data = parse_file(r'../raw_data/vcf{}2010-2021.csv'.format(fondo), fondo)
         if first:
             data.to_sql('VALORES_CUOTA', con=CONN, if_exists='replace')
             first = False
