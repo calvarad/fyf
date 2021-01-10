@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
 
     fecha_ini = datetime.datetime.strptime('2010-01-01', '%Y-%m-%d').date()
-    fecha_end = datetime.datetime.strptime('2020-12-13', '%Y-%m-%d').date()
+    fecha_end = datetime.datetime.strptime('2021-01-04', '%Y-%m-%d').date()
     monto_inicial = 100
 
     for afp in ['HABITAT', 'CUPRUM', 'CAPITAL', 'PLANVITAL']:
