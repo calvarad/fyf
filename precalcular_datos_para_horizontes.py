@@ -19,8 +19,8 @@ df_dias_habiles = pd.read_sql('SELECT * FROM HABILES',
 
 # PARAMETROS PARA DEFINIR LA ESTRATEGIA
 #fecha_ini = datetime.datetime.strptime('2014-01-01', '%Y-%m-%d').date()
-fecha_ini = pd.to_datetime('2014-01-01').date()
-fecha_end = pd.to_datetime('2020-12-08').date()
+fecha_ini = pd.to_datetime('2012-01-01').date()
+fecha_end = pd.to_datetime('2021-01-04').date()
 monto_inicial = 100
 
 estrategia_a = Estrategia(fecha_ini, fecha_end, 'A')
