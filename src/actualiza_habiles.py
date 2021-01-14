@@ -69,7 +69,7 @@ if __name__ == '__main__':
 
     # PARAMETROS PARA BUSCAR DIAS HABILES
     fecha_ini = datetime.datetime.strptime('2020-12-01', '%Y-%m-%d').date()
-    fecha_end = datetime.datetime.strptime('2021-01-15', '%Y-%m-%d').date()
+    fecha_end = (datetime.datetime.now() + datetime.timedelta(days=5)).date() 
 
     # Paso 0. Actualiza el indice de la base (no es necesario ahora, pero la primera vez si)
     # Este paso es importante si actualizo la base original de dias habiles (reservada)

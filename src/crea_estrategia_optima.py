@@ -1,9 +1,8 @@
-
-
 import sys
 sys.path.append("../")
 
 from src import Estrategia, generate_df_valores_cuota, agrega_estrategias
+
 import datetime
 import os
 import pandas as pd
@@ -73,9 +72,14 @@ if __name__ == '__main__':
     df_dias_habiles = pd.read_sql('SELECT * FROM HABILES',
                               conn_habiles, parse_dates=['Fecha'])
 
+    DB_VC = r'../processed_data/valores_cuota.db'
+
+    date_max_str = sqlite3.connect(DB_VC).cursor().execute('SELECT MAX(fecha_dia) FROM VALORES_CUOTA').fetchone()[0]
 
     fecha_ini = datetime.datetime.strptime('2010-01-01', '%Y-%m-%d').date()
-    fecha_end = datetime.datetime.strptime('2021-01-04', '%Y-%m-%d').date()
+    #fecha_end = datetime.datetime.strptime('2021-01-04', '%Y-%m-%d').date()
+    fecha_end = (datetime.datetime.strptime(date_max_str, '%Y-%m-%d') - datetime.timedelta(days=4)).date()
+
     monto_inicial = 100
 
     for afp in ['HABITAT', 'CUPRUM', 'CAPITAL', 'PLANVITAL']:
