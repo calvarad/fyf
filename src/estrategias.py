@@ -141,12 +141,23 @@ def agrega_estrategias(lista_estrategias, df_dias_habiles,
     return df_out
 
 
+def get_annual_returns(final_return_rate: float,
+                       n_of_years: int) -> float:
+    """
+    Returns the annual return rate given the final return rate
+    (for example 0.27) and the number of years
+    """
+    return (1.0 + final_return_rate)**(1.0 / n_of_years) - 1
+
+
 def generate_returns_for_different_starting_dates(df: pd.DataFrame,
             años_de_horizonte: int,
             beg_period: datetime.datetime) -> pd.DataFrame:
     """
     Genera resultados desde el periodo inicial `beg_period`
-    para x años hacia adelante de horizonte
+    para x años hacia adelante de horizonte.
+
+    Entrega retornos anualizados
     """
     horizonte_de_tiempo = pd.Timedelta(años_de_horizonte*365, unit="d")
     end_period = df.Fecha.max() - horizonte_de_tiempo
@@ -161,9 +172,12 @@ def generate_returns_for_different_starting_dates(df: pd.DataFrame,
         end_data = df.loc[df.Fecha == start_date +
                           horizonte_de_tiempo, relevant_columns]
         try:
+            final_return_rate = (end_data.values / start_data.values - 1)
+            annualized_returns = get_annual_returns(final_return_rate,
+                                 n_of_years=años_de_horizonte)
             rows.append(
-                pd.DataFrame(100 * (end_data.values / start_data.values - 1),
-                             columns=relevant_columns, index=[start_date])
+                pd.DataFrame(100 * annualized_returns,  # type: ignore
+                             columns=relevant_columns, index=[start_date]) 
             )
         except:
             pass

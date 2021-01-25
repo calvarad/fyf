@@ -3,6 +3,7 @@ import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
 def get_results_for_different_starting_days(df, horizonte_de_tiempo: pd.Timedelta):
 
     beg_period = df.Fecha.min()
@@ -78,7 +79,7 @@ def compare_afp_with_ff_distributions(dataframe, años_de_horizonte: int, afp: s
 
     fig.tight_layout()
 
-    fig.suptitle(f"""Comparación de rentabilidades partiendo desde diferentes puntos de tiempo \n
+    fig.suptitle(f"""Comparación de rentabilidades anualizadas partiendo desde diferentes puntos de tiempo \n
                     Horizonte de tiempo: {años_de_horizonte} años """, y=1.1)
 
     return fig, axes
