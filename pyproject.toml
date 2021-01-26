@@ -16,6 +16,7 @@ ipywidgets = "^7.6.3"
 voila = "^0.2.6"
 jupyter = "^1.0.0"
 ipykernel = "^5.4.3"
+openpyxl = "^3.0.6"
 
 [tool.poetry.dev-dependencies]
 
